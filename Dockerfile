@@ -1,4 +1,4 @@
-FROM openjdk:14-jdk
+FROM openjdk:14-jdk-buster
 VOLUME /tmp
 ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
