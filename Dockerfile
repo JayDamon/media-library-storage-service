@@ -1,5 +1,5 @@
 FROM openjdk:latest
 VOLUME /tmp
-ARG JAR_FILE
+ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.factotum.plexbackend.PlexBackendApplication"]
+ENTRYPOINT ["java","java ${JAVA_OPTS} -jar /app.jar"]
