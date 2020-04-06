@@ -22,7 +22,11 @@ public class TitleServiceImpl implements TitleService {
     public Title saveTitle(TitleDto title) {
         Title newTitle = TitleMappingUtil.mapDtoToEntity(title);
         Integer orderAdded = this.titleRepository.findMaxOrderAdded();
-        newTitle.setOrderAdded(orderAdded + 1);
+        if (orderAdded == null) {
+            newTitle.setOrderAdded(1);
+        } else {
+            newTitle.setOrderAdded(orderAdded + 1);
+        }
         return this.titleRepository.save(newTitle);
     }
 
