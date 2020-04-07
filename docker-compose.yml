@@ -1,6 +1,9 @@
 version: '3.7'
 services:
   plex-request-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: factotumsoftware/plex-request-service:0.0.1
     ports:
       -8080:8080
