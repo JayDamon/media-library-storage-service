@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  plex-request-service:
+    image: factotumsoftware/plex-request-service:0.0.1
+    ports:
+      -8080:8080
+    depends_on:
+      - plex-mysql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://plex-mysql/plex_app?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=app_user
+      - SPRING_DATASOURCE_PASSWORD=6NSMqvSszpKq42Jf
