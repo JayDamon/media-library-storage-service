@@ -10,13 +10,13 @@ public class SearchDto {
     private TitleDto[] search;
 
     @JsonProperty("totalResults")
-    int totalResults;
+    private int totalResults;
 
     @JsonProperty("Response")
-    boolean response;
+    private boolean response;
 
     @JsonProperty("Error")
-    String error;
+    private String error;
 
     public SearchDto() {
     }
