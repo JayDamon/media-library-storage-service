@@ -37,7 +37,7 @@ public class TitleServiceImpl implements TitleService {
 
     @Override
     public void deleteTitle(int id) {
-        System.out.println("Deleting title: " + id);
         titleRepository.deleteById(id);
     }
+
 }
