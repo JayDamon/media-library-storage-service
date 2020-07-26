@@ -13,7 +13,7 @@ import com.factotum.plexbackend.repository.TitleRepository;
 @Service
 public class TitleServiceImpl implements TitleService {
 
-    private TitleRepository titleRepository;
+    private final TitleRepository titleRepository;
 
     public TitleServiceImpl(TitleRepository titleRepository) {
         this.titleRepository = titleRepository;
@@ -48,17 +48,17 @@ public class TitleServiceImpl implements TitleService {
 
     }
 
+    @Override
+    public void deleteTitle(int id) {
+        titleRepository.deleteById(id);
+    }
+
     private void validateTitleDto(TitleDto title) {
 
         if (title.getTitle() == null || title.getTitle().isEmpty()) {
             throw new IllegalArgumentException("Title must not be null or empty");
         }
 
-    }
-
-    @Override
-    public void deleteTitle(int id) {
-        titleRepository.deleteById(id);
     }
 
 }
