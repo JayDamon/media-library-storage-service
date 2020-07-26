@@ -17,9 +17,9 @@ public class OmdbApiService implements TitleApiService {
     private static final String API_KEY_PARAM = "apikey";
     private static final String SEARCH = "s";
 
-    private HttpService httpService;
-    private String apiKey;
-    private URL apiUrl;
+    private final HttpService httpService;
+    private final String apiKey;
+    private final URL apiUrl;
 
     public OmdbApiService(
             HttpService httpService,

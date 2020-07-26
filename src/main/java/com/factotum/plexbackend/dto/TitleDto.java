@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TitleDto implements Serializable {
 
+    @JsonProperty("id")
+    private Integer id;
+
     @NotNull
     @JsonProperty("Title")
     private String title;
@@ -30,6 +33,14 @@ public class TitleDto implements Serializable {
     private Integer orderAdded;
 
     public TitleDto() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {

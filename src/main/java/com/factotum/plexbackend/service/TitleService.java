@@ -10,4 +10,7 @@ public interface TitleService {
     Title saveTitle(TitleDto title);
 
     Collection<Title> getRequestedTitles();
+
+    void deleteTitle(int id);
+
 }

@@ -34,4 +34,10 @@ public class TitleServiceImpl implements TitleService {
     public Collection<Title> getRequestedTitles() {
         return this.titleRepository.findAll();
     }
+
+    @Override
+    public void deleteTitle(int id) {
+        System.out.println("Deleting title: " + id);
+        titleRepository.deleteById(id);
+    }
 }
