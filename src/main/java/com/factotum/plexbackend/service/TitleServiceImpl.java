@@ -55,4 +55,10 @@ public class TitleServiceImpl implements TitleService {
         }
 
     }
+
+    @Override
+    public void deleteTitle(int id) {
+        titleRepository.deleteById(id);
+    }
+
 }
