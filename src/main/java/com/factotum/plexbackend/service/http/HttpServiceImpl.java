@@ -109,6 +109,8 @@ public class HttpServiceImpl implements HttpService {
             url = new URL(updateUrl.toString());
         }
 
+        System.out.println(url);
+
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("Content-Type", MediaType.APPLICATION_JSON_VALUE);
