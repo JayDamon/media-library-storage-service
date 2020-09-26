@@ -6,7 +6,9 @@ import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +25,8 @@ import com.factotum.plexbackend.util.TitleMappingUtil;
 @RequestMapping("/api/v1/titles")
 public class TitleController {
 
-    private TitleApiService titleApiService;
-    private TitleService titleService;
+    private final TitleApiService titleApiService;
+    private final TitleService titleService;
 
     public TitleController(TitleApiService titleApiService, TitleService titleService) {
         this.titleApiService = titleApiService;
@@ -33,22 +35,23 @@ public class TitleController {
 
     @GetMapping("/search")
     public ResponseEntity<?> searchTitles(@RequestParam(name = "title") String title) {
-
         return ok(this.titleApiService.searchByTitle(title));
-
     }
 
     @GetMapping("")
     public ResponseEntity<?> getRequestedTitles() {
-
         return ok(TitleMappingUtil.mapEntitesToDto(this.titleService.getRequestedTitles()));
     }
 
     @PostMapping("")
     public ResponseEntity<?> addNewTitle(@Valid @RequestBody TitleDto title) {
-
         return ok(TitleMappingUtil.mapEntityToDto(this.titleService.saveTitle(title)));
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteTitle(@PathVariable(value = "id") int id) {
+        this.titleService.deleteTitle(id);
+        return ResponseEntity.ok().build();
     }
 
 }
