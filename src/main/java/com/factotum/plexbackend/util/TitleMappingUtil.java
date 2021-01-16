@@ -1,13 +1,12 @@
 package com.factotum.plexbackend.util;
 
+import com.factotum.plexbackend.dto.TitleDto;
+import com.factotum.plexbackend.entity.Title;
+import org.modelmapper.ModelMapper;
+
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import org.modelmapper.ModelMapper;
-
-import com.factotum.plexbackend.dto.TitleDto;
-import com.factotum.plexbackend.entity.Title;
 
 public class TitleMappingUtil {
 

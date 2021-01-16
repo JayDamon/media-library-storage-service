@@ -1,8 +1,6 @@
 package com.factotum.plexbackend.exception;
 
-import javax.persistence.NoResultException;
-import javax.validation.ConstraintViolationException;
-
+import com.factotum.plexbackend.dto.BaseResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
@@ -15,7 +13,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.factotum.plexbackend.dto.BaseResponse;
+import javax.persistence.NoResultException;
+import javax.validation.ConstraintViolationException;
 
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
