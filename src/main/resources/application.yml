@@ -62,11 +62,6 @@ spring:
   config:
     activate:
       on-profile: dev
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
   datasource:
     url: jdbc:mysql://plex-mysql-service:3306/plex_app_dev
     username: app_user # change to match secret
@@ -86,11 +81,6 @@ spring:
   config:
     activate:
       on-profile: prod
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
   datasource:
     url: jdbc:mysql://plex-mysql-service:3306/plex_app
     username: root # change to match secret
