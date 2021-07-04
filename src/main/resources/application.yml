@@ -74,6 +74,11 @@ spring:
   sql:
     init:
       continue-on-error: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    baseline-on-migrate: true
 
 ---
 
