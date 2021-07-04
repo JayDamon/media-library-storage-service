@@ -68,9 +68,9 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: jdbc:mysql://mysql-service:3306/plex_app_dev
-    username: root # change to match secret
-    password: password # change to match secret
+    url: jdbc:mysql://plex-mysql-service:3306/plex_app_dev
+    username: app_user # change to match secret
+    password: 6NSMqvSszpKq42Jf # change to match secret
   sql:
     init:
       continue-on-error: true
@@ -87,7 +87,7 @@ spring:
       settings:
         web-allow-others: true
   datasource:
-    url: jdbc:mysql://mysql-service:3306/plex_app_dev
+    url: jdbc:mysql://plex-mysql-service:3306/plex_app
     username: root # change to match secret
     password: password # change to match secret
   sql:
