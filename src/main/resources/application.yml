@@ -1,3 +1,4 @@
+# Spring boot admin configuration
 management:
   endpoints:
     web:
@@ -17,6 +18,19 @@ omdbapi:
 
 ---
 
+# Database setup
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    baseline-on-migrate: true
+  sql:
+    init:
+      continue-on-error: true
+
+---
+
 spring:
   config:
     activate:
@@ -24,12 +38,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:DATABASE
     driver-class-name: 'org.h2.Driver'
-  jpa:
-    hibernate:
-      ddl-auto: validate
-  flyway:
-    baseline-on-migrate: true
-  #    enabled: false
+
 ---
 
 spring:
@@ -46,14 +55,7 @@ spring:
     username: sa
     password:
     driver-class-name: 'org.h2.Driver'
-  sql:
-    init:
-      continue-on-error: true
-  jpa:
-    hibernate:
-      ddl-auto: validate
   flyway:
-    baseline-on-migrate: true
     locations: 'classpath:db/migration,test_data'
 
 ---
@@ -64,17 +66,8 @@ spring:
       on-profile: dev
   datasource:
     url: jdbc:mysql://plex-mysql-service:3306/plex_app_dev
-    username: app_user # change to match secret
-    password: 6NSMqvSszpKq42Jf # change to match secret
-  sql:
-    init:
-      continue-on-error: true
-  jpa:
-    hibernate:
-      ddl-auto: validate
-  flyway:
-    enabled: false
-#    baseline-on-migrate: true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
 ---
 
@@ -84,8 +77,5 @@ spring:
       on-profile: prod
   datasource:
     url: jdbc:mysql://plex-mysql-service:3306/plex_app
-    username: root # change to match secret
-    password: password # change to match secret
-  sql:
-    init:
-      continue-on-error: true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
