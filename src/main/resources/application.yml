@@ -65,7 +65,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:mysql://plex-mysql-service:3306/plex_app_dev
+    url: jdbc:mysql://mysql-service:3306/plex_app_dev
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
@@ -76,6 +76,6 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:mysql://plex-mysql-service:3306/plex_app
+    url: jdbc:mysql://mysql-service:3306/plex_app
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
