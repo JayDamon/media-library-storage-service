@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.factotum</groupId>
-    <artifactId>plex-backend</artifactId>
+    <artifactId>media-library-storage-service</artifactId>
     <version>0.0.9-SNAPSHOT</version>
     <name>plex-backend</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Storage service for the media library application</description>
 
     <properties>
         <java.version>16</java.version>
