@@ -6,6 +6,10 @@ workflows:
       - build-and-test:
           context:
             - docker-login
+          filters:
+            branches:
+              only:
+                - master
 
 jobs:
   build-and-test:  
