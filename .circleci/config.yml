@@ -29,6 +29,6 @@ jobs:
           name: Build and push Docker image
           command: |
             docker build -t $DOCKER_REPOSITORY/$IMAGE_NAME:$TAG .
-            echo $DOCKER_PWD | docker login cloud.canister.io:5000/jaymond87 -u $DOCKER_USERNAME --password-stdin 
+            echo $DOCKER_PASSWORD | docker login cloud.canister.io:5000/jaymond87 -u $DOCKER_USERNAME --password-stdin 
             docker push $DOCKER_REPOSITORY/$IMAGE_NAME:$TAG
 
