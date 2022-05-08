@@ -49,7 +49,7 @@ class TitleServiceImpleUnitTest {
 
         when(this.titleRepository.save(any())).thenAnswer(i -> {
                     Title savedTitle = (Title) i.getArguments()[0];
-                    savedTitle.setId(57);
+                    savedTitle.setId(57L);
                     return savedTitle;
                 });
 
@@ -58,7 +58,7 @@ class TitleServiceImpleUnitTest {
 
         // Assert
         assertThat(savedTitle, is(not(nullValue())));
-        assertThat(savedTitle.getId(), is(equalTo(57)));
+        assertThat(savedTitle.getId(), is(equalTo(57L)));
         assertThat(savedTitle.getImdb(), is(equalTo("Some Imdb ID")));
         assertThat(savedTitle.getPosterUrl(), is(equalTo("I am in fact a url")));
         assertThat(savedTitle.getTitle(), is(equalTo("New Title!")));
