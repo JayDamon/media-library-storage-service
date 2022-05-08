@@ -1,3 +1,27 @@
+spring:
+  application:
+    name: media-library-storage-service
+
+---
+
+spring:
+  cloud:
+    kubernetes:
+      enabled: false
+      config:
+        enabled: false
+        enable-api: false
+      discovery:
+        enabled: false
+      reload:
+        enabled: false
+      secrets:
+        enable-api: false
+    discovery:
+      enabled: false
+
+---
+
 # Spring boot admin configuration
 management:
   endpoints:
