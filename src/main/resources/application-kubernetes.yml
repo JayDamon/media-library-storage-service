@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: false
+      loadbalancer:
+        enabled: false
+      enabled: true
+      reload:
+        strategy: restart_context
+        enabled: true
+    discovery:
+      enabled: false
