@@ -49,7 +49,7 @@ public class TitleController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteTitle(@PathVariable(value = "id") int id) {
+    public ResponseEntity<?> deleteTitle(@PathVariable(value = "id") long id) {
         this.titleService.deleteTitle(id);
         return ResponseEntity.ok().build();
     }

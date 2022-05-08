@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TitleRepository extends JpaRepository<Title, Integer> {
+public interface TitleRepository extends JpaRepository<Title, Long> {
 
     @Query(value = "SELECT max(t.orderAdded) FROM Title t")
     Integer findMaxOrderAdded();

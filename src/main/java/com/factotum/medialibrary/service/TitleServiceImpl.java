@@ -49,7 +49,7 @@ public class TitleServiceImpl implements TitleService {
     }
 
     @Override
-    public void deleteTitle(int id) {
+    public void deleteTitle(long id) {
         titleRepository.deleteById(id);
     }
 

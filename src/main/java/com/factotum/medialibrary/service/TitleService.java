@@ -11,6 +11,6 @@ public interface TitleService {
 
     Collection<Title> getRequestedTitles();
 
-    void deleteTitle(int id);
+    void deleteTitle(long id);
 
 }
