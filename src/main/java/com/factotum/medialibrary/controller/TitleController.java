@@ -4,6 +4,7 @@ import static org.springframework.http.ResponseEntity.ok;
 
 import javax.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +23,7 @@ import com.factotum.medialibrary.util.TitleMappingUtil;
 
 @RestController
 @Validated
+@Slf4j
 @RequestMapping("/api/v1/titles")
 public class TitleController {
 
@@ -35,6 +37,7 @@ public class TitleController {
 
     @GetMapping("/search")
     public ResponseEntity<?> searchTitles(@RequestParam(name = "title") String title) {
+        log.info("Searching for title");
         return ok(this.titleApiService.searchByTitle(title));
     }
 
