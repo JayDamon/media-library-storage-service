@@ -18,17 +18,17 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 19.03.13
+          version: docker23
       - run:
           name: Setup VirtualEnv
           command: |
             echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
             echo 'export IMAGE_NAME=media-library-storage-service' >> $BASH_ENV 
-            echo 'export DOCKER_REPOSITORY=cloud.canister.io:5000/jaymond87' >> $BASH_ENV
+            echo 'export DOCKER_REPOSITORY=trance0302' >> $BASH_ENV
       - run:
           name: Build and push Docker image
           command: |
             docker build -t $DOCKER_REPOSITORY/$IMAGE_NAME:$TAG .
-            echo $DOCKER_PASSWORD | docker login cloud.canister.io:5000/jaymond87 -u $DOCKER_USERNAME --password-stdin 
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin 
             docker push $DOCKER_REPOSITORY/$IMAGE_NAME:$TAG
 
